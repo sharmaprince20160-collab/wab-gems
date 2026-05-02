@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sacred Rudraksha & Premium Gemstones</title>
+
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar - Enhanced with shimmer effect */
+.navbar {
+    background: rgba(0, 0, 0, 0.85);
+   
+    border-bottom: 1px solid rgba(255, 215, 0, 0.4);
+    padding: 1rem 0;
+    position: relative;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+/* TOP SECTION WITH BACKGROUND VIDEO/PHOTO - New Section */
+.top-banner {
+    position: relative;
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+/* Background video styling for top banner */
+#top-banner-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Fallback image if video doesn't load */
+.top-banner-img-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    display: none;
+}
+
+/* Dark overlay for better text visibility */
+.top-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+    z-index: 1;
+}
+
+/* Glowing border effect */
+.top-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #FFD700, #FFA500, #FFD700, transparent);
+    z-index: 2;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.banner-content h1 {
+    font-size: 3.8rem;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    background: linear-gradient(135deg, #FFD700, #FFA500, #FFE44D);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+    margin-bottom: 1rem;
+    animation: fadeInDown 0.8s ease;
+}
+
+.banner-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.banner-content .btn-gold {
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating spiritual symbols animation */
+.floating-symbol {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.15;
+    pointer-events: none;
+    animation: floatSymbol 12s infinite ease-in-out;
+}
+
+@keyframes floatSymbol {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.navbar-brand {
+    color: #FFD700 !important;
+    font-weight: bold;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255,215,0,0.5);
+}
+
+/* Hero section - keeping for compatibility */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #2c2c2c, #4a4a4a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* Cards - Glassmorphic effect */
+.card {
+    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 40px rgba(0,0,0,0.2);
+    background: white;
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #FFA500;
+}
+
+.card h4 {
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: #1a1a1a;
+}
+
+.card p {
+    color: #555;
+    font-weight: 500;
+}
+
+/* Trust Section */
+.trust-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.trust-item {
+    text-align: center;
+    padding: 1rem;
+}
+
+.trust-icon {
+    font-size: 2.5rem;
+    color: #FFA500;
+    margin-bottom: 0.8rem;
+}
+
+.trust-item p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2c2c2c;
+}
+
+/* CTA Section */
+.cta {
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta::before {
+    content: "✦ ॐ ✦";
+    position: absolute;
+    font-size: 8rem;
+    opacity: 0.05;
+    bottom: -20px;
+    right: -20px;
+    font-family: monospace;
+    pointer-events: none;
+}
+
+.cta h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background: #0a0a0a;
+    color: #ccc;
+    padding: 25px;
+    text-align: center;
+    border-top: 1px solid rgba(255,215,0,0.2);
+}
+
+footer p {
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .banner-content h1 {
+        font-size: 2.2rem;
+    }
+    .banner-content p {
+        font-size: 1rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .card {
+        margin-bottom: 1.5rem;
+    }
+    .top-banner {
+        min-height: 70vh;
+    }
+}
+
+/* Rudraksha Badge */
+.rudraksha-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.6);
+
+    padding: 6px 14px;
+    border-radius: 40px;
+    font-size: 0.7rem;
+    color: #FFD700;
+    z-index: 99;
+    pointer-events: none;
+    font-family: monospace;
+}
+
+/* Scroll to top button */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255,215,0,0.4);
+}
+
+.scroll-top i {
+    color: #1a1a1a;
+    font-size: 1.3rem;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+        <i class="fas fa-gem"></i> Sacred Rudraksha & Gems
+    </a>
+  </div>
+</nav>
+
+<!-- ========== TOP BANNER WITH BACKGROUND VIDEO/PHOTO ========== -->
+<section class="top-banner">
+    <!-- Background Video (Primary) -->
+    <video autoplay muted loop playsinline id="top-banner-video">
+        <!-- Beautiful spiritual video - Golden particles falling -->
+        <source src="d:\game.wab\7101913-uhd_2560_1440_25fps.mp4" type="video/mp4">
+        <!-- Fallback video 2 -->
+        <source src="d:\game.wab\7101913-uhd_2560_1440_25fps.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Fallback Image if video fails to load -->
+    <img class="top-banner-img-fallback" id="fallback-img" src="https://images.pexels.com/photos/1629236/pexels-photo-1629236.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Rudraksha Background">
+    
+    <!-- Floating spiritual symbols for beauty -->
+    <div class="floating-symbol" style="top: 15%; left: 5%; animation-duration: 14s;">
+        <i class="fas fa-om" style="font-size: 3rem;">(❁´◡`❁)</i>
+    </div>
+    <div class="floating-symbol" style="bottom: 20%; right: 8%; animation-duration: 18s;">
+        <i class="fas fa-leaf" style="font-size: 2.5rem;">...</i>
+    </div>
+    <div class="floating-symbol" style="top: 40%; right: 12%; animation-duration: 16s;">
+        <i class="fas fa-gem" style="font-size: 2rem;">..</i>
+    </div>
+    <div class="floating-symbol" style="bottom: 30%; left: 10%; animation-duration: 20s;">
+        <i class="fas fa-hand-sparkles" style="font-size: 2.2rem;">...</i>
+    </div>
+    
+    <div class="banner-content">
+        <h1>Authentic Rudraksha & Certified Gemstones</h1>
+        <p>Experience spiritual power with 100% original products • Energized & Astrologically Tested</p>
+        <a href="textp.html" class="btn btn-gold mt-2" style="color: #c71414; background-color: #ffc107; border-color: #ffc107;">✨ Shop Now ✨</a>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section class="container py-5 mt-4">
+    <h2 class="section-title">Our Sacred Collection</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h4>Rudraksha Mala</h4>
+                <p>Naturally sourced, 5 to 14 Mukhi beads • Boost meditation & inner peace</p>
+                <span class="badge bg-warning text-dark mt-2">Best Seller</span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h4>Premium Gemstones</h4>
+                <p>Lab certified Ruby, Emerald, Yellow Sapphire & more • Astrological benefits</p>
+                <span class="badge bg-warning text-dark mt-2">Certified</span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-icon">
+                    <i class="fas fa-hand-peace"></i>
+                </div>
+                <h4>Healing Bracelets</h4>
+                <p>Combination of Rudraksha + Gemstones • Chakra balancing & positivity</p>
+                <span class="badge bg-warning text-dark mt-2">Trending</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trust Section -->
+<section class="trust-section py-5">
+    <div class="container">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="row text-center mt-4">
+            <div class="col-md-3 col-6 trust-item">
+                <div class="trust-icon"><i class="fas fa-certificate"></i></div>
+                <p>✔ 100% Authentic Products</p>
+            </div>
+            <div class="col-md-3 col-6 trust-item">
+                <div class="trust-icon"><i class="fas fa-flask"></i></div>
+                <p>✔ Lab Certified Gemstones</p>
+            </div>
+            <div class="col-md-3 col-6 trust-item">
+                <div class="trust-icon"><i class="fas fa-users"></i></div>
+                <p>✔ Trusted by Thousands</p>
+            </div>
+            <div class="col-md-3 col-6 trust-item">
+                <div class="trust-icon"><i class="fas fa-charging-station"></i></div>
+                <p>✔ Energized by Experts</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Spiritual CTA -->
+<section class="cta">
+    <div class="container">
+        <h2><i class="fas fa-om"></i> Start Your Spiritual Journey Today <i class="fas fa-seedling"></i></h2>
+        <p class="mb-4">Discover divine energy with our authentic Rudraksha & premium gemstones</p>
+        <a href="#" class="btn btn-gold btn-lg">Explore Collection →</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Sacred Rudraksha & Premium Gemstones | Divine Blessings</p>
+    <p style="font-size: 0.75rem; opacity: 0.7;"><i class="fas fa-gem"></i> Rudraksha • Gemstones • Spiritual Wellness <i class="fas fa-leaf"></i></p>
+</footer>
+
+<!-- Floating Rudraksha Badge -->
+<div class="rudraksha-badge">
+    <i class="fas fa-circle-notch"></i> ॐ Sacred Energy ॐ <i class="fas fa-gem"></i>
+</div>
+
+<!-- Scroll to Top Button -->
+<div class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+<!-- FontAwesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    (function() {
+        // Handle video playback
+        const video = document.getElementById('top-banner-video');
+        const fallbackImg = document.getElementById('fallback-img');
+        
+        if (video) {
+            // Try to play video
+            video.play().catch(function(error) {
+                console.log("Video autoplay failed, showing fallback image");
+                // Hide video and show fallback image
+                video.style.display = 'none';
+                if (fallbackImg) {
+                    fallbackImg.style.display = 'block';
+                }
+            });
+            
+            // If video source fails to load, show fallback image
+            video.addEventListener('error', function() {
+                console.log("Video source error, showing fallback image");
+                video.style.display = 'none';
+                if (fallbackImg) {
+                    fallbackImg.style.display = 'block';
+                }
+            });
+        }
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.navbar');
+            const scrollBtn = document.getElementById('scrollTopBtn');
+            
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(0,0,0,0.95)';
+                nav.style.backdropFilter = 'blur(16px)';
+                if (scrollBtn) scrollBtn.classList.add('show');
+            } else {
+                nav.style.background = 'rgba(0,0,0,0.85)';
+                nav.style.backdropFilter = 'blur(12px)';
+                if (scrollBtn) scrollBtn.classList.remove('show');
+            }
+        });
+        
+        // Animate cards on scroll
+        const cards = document.querySelectorAll('.card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+        
+        // Banner fade in animation
+        const bannerContent = document.querySelector('.banner-content');
+        if (bannerContent) {
+            bannerContent.style.opacity = '1';
+        }
+    })();
+    
+    // Scroll to top function
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
+</body>
+</html>
